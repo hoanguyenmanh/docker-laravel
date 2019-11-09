@@ -61,6 +61,7 @@ RUN add-apt-repository -y ppa:nginx/stable \
     php7.3-amqp \
 && phpdismod xdebug opcache \
 && mkdir /run/php && chown www-data:www-data /run/php \
+&& curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/bin --filename=composer \
 && apt-get autoclean \
 && rm -vf /var/lib/apt/lists/*.* /var/tmp/*
 
